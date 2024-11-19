@@ -1,0 +1,144 @@
+@import '../styles/vars';
+@import '../styles/functions';
+
+.assetsFilter {
+    @include wrapper;
+    padding-top: wv-1460(50px);
+    padding-bottom: wv-1460(30px);
+    background-color: $dark-grey;
+
+    @include tablet() {
+        padding-top: wv-768(40px);
+    }
+
+    @include mobile() {
+        padding-top: wv-380(40px);
+    }
+
+    .tabButtons {
+        @include H4;
+        display: flex;
+        gap: wv-1460(30px);
+
+        span {
+            display: inline-block;
+            color: $light;
+            opacity: 0.2;
+            //cursor: pointer; временно не используется - до появления кладовых
+
+            &.active {
+                color: $brick;
+                opacity: 1;
+            }
+        }
+        @include mobile() {
+            .mobileFilter {
+                padding: 5px;
+                border-radius: 13px;
+                border: 1px solid $brick;
+                line-height: none;
+            }
+        }
+    }
+
+    .parkingPantrySections {
+        margin: wv-1460(30px) 0;
+    }
+
+    .reset {
+        text-align: end;
+
+        button {
+            cursor: pointer;
+        }
+
+        span {
+            @include T2;
+            color: $light;
+            margin-right: wv-1460(10px);
+        }
+    }
+
+    .topControls {
+        @include tablet() {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include mobile() {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .mobileFilterButton {
+        position: relative;
+        height: 26px;
+        padding: 5px;
+        border-radius: 13px;
+        border: 1px solid $brick;
+
+        &.filterChanged {
+            background-color: $brick;
+
+            div {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: $light;
+                @include C1;
+                @include mobile() {
+                    color: $dark-grey;
+                    font-size: 10px;
+                    line-height: 14px;
+                }
+                padding-top: 1px;
+                padding-left: 1px;
+            }
+        }
+    }
+}
+
+.modalButtons {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: wv-380(10px);
+    .svgButtonWrapper {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $light;
+        padding-top: 4px;
+        padding-left: 1px;
+    }
+
+    button:disabled {
+        div {
+            background-color: $grey;
+        }
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+    @include tablet() {
+        padding-top: wv-768(85px);
+        padding-bottom: wv-768(30px);
+    }
+
+    @include mobile() {
+        padding-top: wv-380(85px);
+        padding-bottom: wv-380(30px);
+        height: calc(100vh - wv-380(100px));
+    }
+}
+
+.modalContent {
+}

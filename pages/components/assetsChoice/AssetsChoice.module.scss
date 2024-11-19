@@ -1,0 +1,67 @@
+@import '../styles/vars';
+@import '../styles/functions';
+
+.assetsChoice {
+    @include wrapper;
+    background-color: $dark-grey;
+
+    .assetsTabs {
+        display: flex;
+        gap: wv-1460(21px);
+        align-items: center;
+
+        .tabButtons {
+            display: flex;
+            gap: wv-1460(16px);
+
+            @include mobile() {
+                gap: wv-380(13px);
+            }
+        }
+
+        span.found {
+            width: wv-1460(82px);
+            color: $light;
+            text-align: left;
+            font-family: $content-300-font;
+            font-size: wv-1460(14px);
+            font-style: normal;
+            font-weight: 300;
+            line-height: wv-1460(30px); /* 114.286% */
+
+            @include mobile() {
+                @include T2;
+                color: $light;
+                width: unset;
+            }
+        }
+
+        @include mobile() {
+            gap: unset;
+            justify-content: space-between;
+        }
+
+        span.tabButton {
+            color: $light;
+            text-align: center;
+            font-family: $primary-600-font;
+            font-size: wv-1460(16px);
+            font-style: normal;
+            font-weight: 600;
+            line-height: wv-1460(30px); /* 187.5% */
+            text-transform: uppercase;
+            opacity: 0.2;
+            cursor: pointer;
+
+            &.active {
+                color: $brick;
+                opacity: 1;
+            }
+
+            @include mobile() {
+                font-size: wv-380(14px);
+                line-height: wv-380(30px); /* 214.286% */
+            }
+        }
+    }
+}

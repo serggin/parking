@@ -1,0 +1,63 @@
+@import '../styles/vars';
+@import '../styles/functions';
+
+.buttonSet {
+    .name {
+        @include T2;
+        color: $light;
+        opacity: 0.5;
+    }
+
+    .buttons {
+        display: flex;
+        gap: wv-1460(5px);
+        margin-top: wv-1460(9px);
+
+        @include laptop() {
+            gap: wv-1200(7px);
+            margin-top: wv-1200(9px);
+        }
+
+        @include tablet() {
+            flex-wrap: wrap;
+            gap: wv-768(7px);
+            margin-top: wv-768(9px);
+        }
+
+        @include mobile() {
+            flex-wrap: wrap;
+            gap: wv-380(7px);
+            margin-top: wv-380(9px);
+        }
+    }
+}
+
+.parkingButton {
+    @include H5;
+    padding: wv-1460(5px) wv-1460(8px) wv-1460(3px);
+    border: 1px solid rgba(249, 245, 243, 0.2);
+    color: $light;
+    cursor: pointer;
+
+    @include wide() {
+        padding: wv-1920(7px) wv-1920(8px) wv-1920(3px);
+    }
+
+    @include laptop() {
+        padding: wv-1200(5px) wv-1200(8px) wv-1200(3px);
+    }
+
+    @include tablet() {
+        padding: wv-768(5px) wv-768(8px) wv-768(3px);
+    }
+
+    @include mobile() {
+        font-size: wv-380(26px);
+        padding: wv-380(9px) wv-380(8px) wv-380(7px);
+    }
+
+    &.active {
+        border-color: $brick-light;
+        color: $brick-light;
+    }
+}

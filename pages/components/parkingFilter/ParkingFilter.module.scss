@@ -1,0 +1,29 @@
+@import '../styles/vars';
+@import '../styles/functions';
+
+.parkingFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: wv-1460(9px);
+
+    @include laptop() {
+        row-gap: wv-1200(9px);
+    }
+
+    @include tablet() {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: wv-768(25px);
+        row-gap: wv-768(9px);
+    }
+
+    @include mobile() {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: wv-380(25px);
+    }
+}

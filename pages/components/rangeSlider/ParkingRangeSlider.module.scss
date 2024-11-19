@@ -1,0 +1,132 @@
+@import '../styles/vars';
+@import '../styles/functions';
+
+.slider {
+    width: wv-1460(300px);
+    margin-left: wv-1460(-5px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba(249, 245, 243, 0.2);
+    transition: all 0.2s ease;
+
+    @include laptop() {
+        margin-left: wv-1200(-6px);
+    }
+
+    @include tablet() {
+        width: wv-768(340px);
+        margin-left: wv-768(-6px);
+    }
+
+    @include mobile() {
+        width: wv-380(340px);
+        margin-left: wv-380(-6px);
+    }
+}
+
+.block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: wv-1460(10px);
+
+    @include wide() {
+        padding: wv-1920(14.6px) wv-1920(10px) wv-1920(11.1px);
+    }
+
+    @include laptop() {
+        padding: wv-1200(9.7px) wv-1200(9px) wv-1200(8.3px);
+    }
+
+    @include tablet() {
+        padding: wv-768(10px);
+    }
+
+    @include mobile() {
+        padding: wv-380(10px);
+    }
+
+    &:last-child {
+        &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 65%;
+            background: rgba(249, 245, 243, 0.2);
+        }
+    }
+}
+
+.input {
+    max-width: wv-1460(100px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    line-height: wv-1460(18px);
+
+    @include laptop() {
+        max-width: wv-1200(100px);
+    }
+
+    @include tablet() {
+        max-width: wv-768(100px);
+    }
+
+    @include mobile() {
+        max-width: wv-380(100px);
+    }
+
+    & span {
+        font-family: $primary-700-font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: wv-1460(14px);
+        line-height: wv-1460(16px);
+        text-align: right;
+        text-transform: uppercase;
+        color: $light;
+
+        & sup {
+            top: -0.45em;
+            font-size: 65%;
+        }
+
+        @include laptop() {
+            font-size: wv-1200(14px);
+            line-height: wv-1200(16px);
+        }
+
+        @include tablet() {
+            font-size: wv-768(14px);
+            line-height: wv-768(16px);
+        }
+
+        @include mobile() {
+            font-size: wv-380(14px);
+            line-height: wv-380(16px);
+        }
+    }
+}
+
+.label {
+    @include C1;
+    color: $light;
+    opacity: 0.5;
+    margin-right: wv-1460(20px);
+
+    @include laptop() {
+        margin-right: wv-1200(20px);
+    }
+
+    @include tablet() {
+        margin-right: wv-768(20px);
+    }
+
+    @include mobile() {
+        margin-right: wv-380(20px);
+    }
+}
